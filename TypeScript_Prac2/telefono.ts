@@ -1,4 +1,4 @@
-class Telefono{
+export class Telefono{
     tipo: string;
     numero: number;
 

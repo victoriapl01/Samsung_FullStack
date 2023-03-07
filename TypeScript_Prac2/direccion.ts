@@ -1,4 +1,4 @@
-class Direccion{
+export class Direccion{
     calle: string;
     numero: number;
     piso: string;

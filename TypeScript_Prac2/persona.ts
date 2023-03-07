@@ -1,9 +1,13 @@
-class Persona{
+import { Direccion } from './direccion.js';
+import { Telefono } from './telefono.js';
+import { Mail } from './mail.js';
+
+export class Persona{
     nombre: string;
     apellido: string;
     edad: number;
     dni: string; 
-    cumpleaños: Date;
+    cumpleaños: string;
     colorFavorito: string;
     sexo: string;
     direcciones: Direccion[]; //Clase Direccion
@@ -13,21 +17,22 @@ class Persona{
 
     //Inicializa los valores de los atributos
     constructor(    
-        nombre: string,
-        apellido: string,
-        edad: number,
-        dni: string,
-        cumpleaños: Date,
-        colorFavorito: string,
-        sexo: string,
-        direcciones: Direccion[], //Clase Direccion
-        mails: Mail[],            //Clase  Mail  
-        telefonos: Telefono[],    //Clase Telefono   
-        notas: string[]  
+        nombre: string,      //No hay valor por defecto es obligatorio pasarlo
+        apellido: string="", //Valor por defecto 
+        edad: number=0,
+        dni: string="",       
+        cumpleaños: string='0/0/0',
+        colorFavorito: string="",
+        sexo: string="",
+        direcciones: Direccion[]= [], //Lista Clase Direccion
+        mails: Mail[] = [],            //Lista Clase  Mail  
+        telefonos: Telefono[] = [],    //Lista Clase Telefono   
+        notas: string[] =[] 
     ){
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
+        this.dni = dni;
         this.cumpleaños = cumpleaños;
         this.colorFavorito = colorFavorito;
         this.sexo = sexo
@@ -77,11 +82,11 @@ class Persona{
     }
 
     //Cumpleaños
-    getCumpleaños(): Date{
+    getCumpleaños(): string{
         return this.cumpleaños;
     }
 
-    setCumpleaños(cumpleaños:Date):void{
+    setCumpleaños(cumpleaños:string):void{
         this.cumpleaños = cumpleaños;
     }
 
@@ -110,8 +115,11 @@ class Persona{
         return this.direcciones;
     }
 
-    setDirecciones(direcciones: Direccion[]):void{
-        this.direcciones = direcciones;
+    agregarDireccion(direccion:Direccion):void{
+        this.direcciones.push(direccion);
+    }
+    eliminarDireccion(indice:number):void{
+        this.direcciones.splice(indice, 1)
     }
 
     //Mails
@@ -119,8 +127,11 @@ class Persona{
         return this.mails;
     }
 
-    setMails(mails: Mail[]):void{
-        this.mails = mails;
+    agregarMail(correo:Mail): void{
+        this.mails.push(correo);
+    }
+    eliminarMail(indice:number):void{
+        this.mails.splice(indice,1);
     }
 
     //Telefono
@@ -128,8 +139,11 @@ class Persona{
         return this.telefonos;
     }
 
-    setTelefono(telefonos: Telefono[]): void{
-        this.telefonos = telefonos;
+    agregarTelefono(telefono:Telefono):void{
+        this.telefonos.push(telefono);
+    }
+    eliminarTelefono(indice:number):void{
+        this.telefonos.splice(indice,1);
     }
 
     //Notas
@@ -140,7 +154,5 @@ class Persona{
     setNotas(notas:string[]):void{
         this.notas = notas;
     }
-
-
 
 };
