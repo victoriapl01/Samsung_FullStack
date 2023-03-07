@@ -36,4 +36,111 @@ class Persona{
         this.telefonos=telefonos;
         this.notas = notas;
     }
+
+    //METODOS
+    //GETTERS Y SETTERS
+
+    //Nombre
+    getNombre(): string{
+        return this.nombre;
+    }
+
+    setNombre(nombre : string): void{
+        this.nombre = nombre;
+    }
+    
+    //Apellido
+    getApellido(): string{
+        return this.apellido;
+    }
+
+    setApellido(apellido : string): void{
+        this.apellido = apellido;
+    }
+
+    //Edad
+    getEdad(): number{
+        return this.edad;
+    }
+
+    setEdad(edad: number){
+        this.edad = edad;
+    }
+
+    //DNI
+    getDNI(): string{
+        return this.dni;
+    }
+
+    setDNI(dni:string):void{
+        this.dni = dni;
+    }
+
+    //Cumpleaños
+    getCumpleaños(): Date{
+        return this.cumpleaños;
+    }
+
+    setCumpleaños(cumpleaños:Date):void{
+        this.cumpleaños = cumpleaños;
+    }
+
+    //Color Favorito
+    getColorFavorito():string{
+        return this.colorFavorito;
+    }
+
+    setColorFavorito(colorFavorito:string):void{
+        this.colorFavorito = colorFavorito
+    }
+
+    //Sexo
+    getSexo():string{
+        return this.sexo;
+    }
+
+    setSexo(sexo:string):void{
+        this.sexo = sexo;
+    }
+    
+
+    //Debería incluir una no modificar todas... set??
+    //Direcciones
+    getDirecciones(): Direccion[]{
+        return this.direcciones;
+    }
+
+    setDirecciones(direcciones: Direccion[]):void{
+        this.direcciones = direcciones;
+    }
+
+    //Mails
+    getMails(): Mail[]{
+        return this.mails;
+    }
+
+    setMails(mails: Mail[]):void{
+        this.mails = mails;
+    }
+
+    //Telefono
+    getTelefonos(): Telefono[]{
+        return this.telefonos;
+    }
+
+    setTelefono(telefonos: Telefono[]): void{
+        this.telefonos = telefonos;
+    }
+
+    //Notas
+    getNotas(): string[]{
+        return this.notas;
+    }
+
+    setNotas(notas:string[]):void{
+        this.notas = notas;
+    }
+
+
+
 };
